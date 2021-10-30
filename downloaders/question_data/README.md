@@ -1,6 +1,6 @@
 # Prerequisites
 1. `authorization` header; this is required to interact with any endpoint in `https://www.algoexpert.io`.
-    ### Get auth_key by inspecting network calls
+    ### Get `AUTH_KEY` by inspecting network calls
         1. Open Chrome Browser 
         2. Log in to AlgoExpert
         3. Open Chrome Devtools
