@@ -1,3 +1,4 @@
+import re
 import pathlib
 
 # Flag to print logs
@@ -13,12 +14,12 @@ PARENT_DIR.mkdir(parents=True, exist_ok=True)
 #   2. Network Tab
 #   3. Inspect a request that requires auth_key(Ex: https://prod.api.algoexpert.io/api/problems/v1/run_json_tests)
 #   4. find `authorization` header in the request headers section
-AUTH_KEY = "YOUR API KEY"
+AUTH_KEY = "eyJhbGciOiJIUzI1NiIsImtpZCI6IjdjYmM2ZWRhNzk1ZGM1YzMxZjJmOTk2Yzg0ODRkZTRiMGIxOTgwMmVmOTYwOWE3YzJmNDFmM2E0OTVhYjZmN2MiLCJ0eXAiOiJKV1QifQ.eyJTZXNzaW9uSUQiOiI4M2Q2ODVmNC0xNzRlLTQ3ZGYtYjI3Zi01YTU2ZTM3YmU5NDUiLCJNZXRhZGF0YSI6eyJwYXJ0aXRpb24iOiJtYWluIiwib2F1dGhfcHJvdmlkZXIiOiJnb29nbGUiLCJvYXV0aF91c2VyX2lkIjoiMTA1ODgxMTA4NjA2Mzc5MTA4OTgyIiwiZW1haWwiOiJpZmF0YWtoYXJmYkBnbWFpbC5jb20iLCJuYW1lIjoiSWZ0YWtoYXIgSHVzc2FpbiIsImF2YXRhcl91cmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp5OFF4dVZnaWF4S3NUalhMMWc4SnpNbld3cWdWNEtWa0dxNm9SRD1zOTYtYyIsInJlZ2lvbiI6IkJEIiwicm9sZXMiOiJwcmVtaXVtdjEsc3lzdGVtc2V4cGVydHYxLHVzZXIifSwiR2VuZXJpY01ldGEiOnt9LCJleHAiOjE2MzY4MTczNTMsImp0aSI6ImI0ZWZlZDRhLWY1YTktNDY5Yy05ZGJjLWE4MGZkMmVlOGJjNiIsImlhdCI6MTYzNTYwNzc1MywiaXNzIjoiYWxnb2V4cGVydCIsInN1YiI6Imdvb2dsZXwwYzQ1NjI3OC01MjgxLTRiYWUtODI4Yi00YzFiYjMxOGQ1MmYifQ.mJRPFMPjuf9h6I16w0H6OAyAPj1piEYTUFt_gsY89ro"
 
 
 # ================================================================
 # Configurations for question_data downloader
-RUN_question_data = True
+RUN_question_data = False
 
 # Headers to send with request to https://algoexpert.io
 REQUEST_HEADERS_FOR_ALGOEXPERT_SITE = {
@@ -40,7 +41,7 @@ REQUEST_HEADERS_FOR_ALGOEXPERT_SITE = {
     "sec-fetch-site": "same-site",
 }
 
-DOWNLOAD_QUESTION_LIST = True # If previously downloaded then set False
+DOWNLOAD_QUESTION_LIST = False # If previously downloaded then set False
 # Question list endpoint
 QUESTION_LIST_ENDPOINT = "https://prod.api.algoexpert.io/api/problems/v1/algoexpert/coding-questions/list"
 QUESTION_LIST_FILE_NAME = 'question_list.json'
@@ -62,7 +63,7 @@ INDENTATION_SPACES = 2
 
 # ================================================================
 # Configurations for question_pdf downloader
-RUN_question_pdf = True # If previously downloaded then set False
+RUN_question_pdf = False # If previously downloaded then set False
 
 QUESTION_URL_PREFIX = "https://www.algoexpert.io/questions/"
 
@@ -87,3 +88,29 @@ QUESTION_STATEMENT_XPATH = '//*[@id="root"]/div/div[6]/div[6]/div/div/div/div/di
 
 # Time to wait to le the hints to expand
 HINT_EXPAND_WAIT_TIME = 3.5
+
+# ================================================================
+# Configurations for question_pdf downloader
+RUN_question_solution_videos = True # If previously downloaded then set False
+
+ALLOWED_ORIGIN_FOR_VIDEOS = "https://www.algoexpert.io/"
+REQUEST_HEADERS_FOR_VIMEO_SITE = {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "en-US,en;q=0.9,bn;q=0.8",
+    "Cache-Control": "no-cache",
+    "Connection": "keep-alive",
+    "Host": "player.vimeo.com",
+    "Pragma": "no-cache",
+    "Referer": ALLOWED_ORIGIN_FOR_VIDEOS,
+    "sec-ch-ua": '"Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"',
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "Windows",
+    "Sec-Fetch-Dest": "iframe",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "cross-site",
+    "Upgrade-Insecure-Requests": "1",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36",
+}
+
+VIDEO_URLS_REGEX = re.compile(r"(?:\")(?P<url>https://vod-progressive.+?mp4)(?:\")(?:.+?)\"quality\":\"(?P<quality>.+?)\"", re.MULTILINE)
