@@ -1,3 +1,4 @@
+from re import VERBOSE
 import requests
 import pathlib
 import json
@@ -49,7 +50,7 @@ def main():
         write_python_object_to_file(questions, question_list_file_path, INDENTATION_SPACES)
     else:
         if LOG:
-            print(f"Loading question list from {question_list_file_path}")
+            print(f"Loading question list from {str(question_list_file_path)}")
         questions = load_json_file_as_python_obj(question_list_file_path)
 
     questions:list = questions['Problems']
@@ -63,20 +64,27 @@ def main():
         question_tests_path = question_dir / f'{file_name}_tests.json'
 
         if LOG:
-            print(f"Question: {idx} {question_name}")
+            print(f"Question data: {idx} {question_name}")
 
         # cooldown
         time.sleep(COOLDOWN_TIME)
         if DOWNLOAD_QUESTION_DATA:
             if LOG:
                 print(f"Downloading data")
+            
             response = get_question_data(question_name)
             question_data = response.json()
             write_python_object_to_file(question_data, question_data_path)
+            
+            if LOG:
+                print("Success")
+
         elif DOWNLOAD_QUESTION_TESTS:
             if LOG:
                 print("Loading data")
             question_data = load_json_file_as_python_obj(question_data_path)
+            if LOG:
+                print("Success")
 
         # cooldown
         time.sleep(COOLDOWN_TIME)
@@ -95,6 +103,9 @@ def main():
             question_test_data = response.json()
             write_python_object_to_file(question_test_data, question_tests_path)
 
+            if LOG:
+                print("Success")
+            
 
 if __name__=='__main__':
     main()
