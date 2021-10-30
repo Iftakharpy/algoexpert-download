@@ -3,8 +3,9 @@ import pathlib
 
 LOG = True
 
-# Change this to set the destination of all the questions 
-PARENT_DIR = pathlib.Path(r".")
+# Change this to set the destination of all the questions
+# PARENT_DIR must be an instance of pathlib.Path
+PARENT_DIR:pathlib.Path = pathlib.Path(r".")
 
 # Get auth_key by inspecting network calls
 #   1. Open Chrome Devtools 
