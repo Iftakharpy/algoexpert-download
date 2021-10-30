@@ -19,7 +19,7 @@ AUTH_KEY = "eyJhbGciOiJIUzI1NiIsImtpZCI6IjdjYmM2ZWRhNzk1ZGM1YzMxZjJmOTk2Yzg0ODRk
 
 # ================================================================
 # Configurations for question_data downloader
-RUN_question_data = False
+RUN_download_question_data = True
 
 # Headers to send with request to https://algoexpert.io
 REQUEST_HEADERS_FOR_ALGOEXPERT_SITE = {
@@ -41,7 +41,7 @@ REQUEST_HEADERS_FOR_ALGOEXPERT_SITE = {
     "sec-fetch-site": "same-site",
 }
 
-DOWNLOAD_QUESTION_LIST = False # If previously downloaded then set False
+DOWNLOAD_QUESTION_LIST = True # If previously downloaded then set False
 # Question list endpoint
 QUESTION_LIST_ENDPOINT = "https://prod.api.algoexpert.io/api/problems/v1/algoexpert/coding-questions/list"
 QUESTION_LIST_FILE_NAME = 'question_list.json'
@@ -63,7 +63,7 @@ INDENTATION_SPACES = 2
 
 # ================================================================
 # Configurations for question_pdf downloader
-RUN_question_pdf = False # If previously downloaded then set False
+RUN_download_question_pdf = True # If previously downloaded then set False
 
 QUESTION_URL_PREFIX = "https://www.algoexpert.io/questions/"
 
@@ -91,7 +91,7 @@ HINT_EXPAND_WAIT_TIME = 3.5
 
 # ================================================================
 # Configurations for question_pdf downloader
-RUN_question_solution_videos = True # If previously downloaded then set False
+RUN_download_question_solution_videos = True # If previously downloaded then set False
 
 ALLOWED_ORIGIN_FOR_VIDEOS = "https://www.algoexpert.io/"
 REQUEST_HEADERS_FOR_VIMEO_SITE = {
