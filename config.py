@@ -14,7 +14,7 @@ PARENT_DIR.mkdir(parents=True, exist_ok=True)
 #   2. Network Tab
 #   3. Inspect a request that requires auth_key(Ex: https://prod.api.algoexpert.io/api/problems/v1/run_json_tests)
 #   4. find `authorization` header in the request headers section
-AUTH_KEY = "YOUR API KEY"
+AUTH_KEY = "YOUR AUTH_KEY"
 
 
 # ================================================================
