@@ -14,7 +14,7 @@ PARENT_DIR.mkdir(parents=True, exist_ok=True)
 #   2. Network Tab
 #   3. Inspect a request that requires auth_key(Ex: https://prod.api.algoexpert.io/api/problems/v1/run_json_tests)
 #   4. find `authorization` header in the request headers section
-AUTH_KEY = "eyJhbGciOiJIUzI1NiIsImtpZCI6IjdjYmM2ZWRhNzk1ZGM1YzMxZjJmOTk2Yzg0ODRkZTRiMGIxOTgwMmVmOTYwOWE3YzJmNDFmM2E0OTVhYjZmN2MiLCJ0eXAiOiJKV1QifQ.eyJTZXNzaW9uSUQiOiI4M2Q2ODVmNC0xNzRlLTQ3ZGYtYjI3Zi01YTU2ZTM3YmU5NDUiLCJNZXRhZGF0YSI6eyJwYXJ0aXRpb24iOiJtYWluIiwib2F1dGhfcHJvdmlkZXIiOiJnb29nbGUiLCJvYXV0aF91c2VyX2lkIjoiMTA1ODgxMTA4NjA2Mzc5MTA4OTgyIiwiZW1haWwiOiJpZmF0YWtoYXJmYkBnbWFpbC5jb20iLCJuYW1lIjoiSWZ0YWtoYXIgSHVzc2FpbiIsImF2YXRhcl91cmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp5OFF4dVZnaWF4S3NUalhMMWc4SnpNbld3cWdWNEtWa0dxNm9SRD1zOTYtYyIsInJlZ2lvbiI6IkJEIiwicm9sZXMiOiJwcmVtaXVtdjEsc3lzdGVtc2V4cGVydHYxLHVzZXIifSwiR2VuZXJpY01ldGEiOnt9LCJleHAiOjE2MzY4MTczNTMsImp0aSI6ImI0ZWZlZDRhLWY1YTktNDY5Yy05ZGJjLWE4MGZkMmVlOGJjNiIsImlhdCI6MTYzNTYwNzc1MywiaXNzIjoiYWxnb2V4cGVydCIsInN1YiI6Imdvb2dsZXwwYzQ1NjI3OC01MjgxLTRiYWUtODI4Yi00YzFiYjMxOGQ1MmYifQ.mJRPFMPjuf9h6I16w0H6OAyAPj1piEYTUFt_gsY89ro"
+AUTH_KEY = "YOUR API KEY"
 
 
 # ================================================================
