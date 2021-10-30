@@ -1,4 +1,3 @@
-from re import VERBOSE
 import requests
 import pathlib
 import json
