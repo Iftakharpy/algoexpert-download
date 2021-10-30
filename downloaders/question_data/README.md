@@ -1,5 +1,12 @@
 # Prerequisites
-1. `authorization` header; this is required to interact with any endpoint.
+1. `authorization` header; this is required to interact with any endpoint in `https://www.algoexpert.io`.
+    ### Get auth_key by inspecting network calls
+        1. Open Chrome Browser 
+        2. Log in to AlgoExpert
+        3. Open Chrome Devtools
+        4. Network Tab
+        5. Inspect a request that requires auth_key(Ex: https://prod.api.algoexpert.io/api/problems/v1/run_json_tests)
+        6. find `authorization` header in the request headers section
 2. Add all other headers from the chrome devtools which are optional but might be good idea to avoid bot detection.
 
 Example of Headers for every requests sent to the AlgoExpert backend:
@@ -30,6 +37,10 @@ HTTP Endpoint: `https://prod.api.algoexpert.io/api/problems/v1/algoexpert/coding
 
 Request Method: `POST` 
 
+Request Body:
+```json
+```
+
 # Get data about question
 
 HTTP Endpoint: `https://prod.api.algoexpert.io/api/problems/v1/algoexpert/coding-questions/get` 
@@ -45,8 +56,6 @@ Request Body:
 
 ---
 # Get test cases for question
-
-## Request 
 
 HTTP Endpoint: `https://prod.api.algoexpert.io/api/problems/v1/run_json_tests` 
 
@@ -68,9 +77,10 @@ Note: In HTTP POST request the data in the body must be string
 ---
 # Auto format json files
 To auto format json files follow these steps
+1. Download and install `Node.js`
 1. Open command line/terminal/shell
 2. Change working directory to the parent directory of all json files
-3. Run on command line `npm init`
-4. Run on command line `npm i prettier`
+3. Run `npm init` on command line
+4. Run `npm i prettier` on command line
 5. Add following script in package.json: `"pretty": "prettier --write \"./**/*.{js,jsx,json}\""`
-6. Run `npm run pretty`
+6. Run `npm run pretty` on command line

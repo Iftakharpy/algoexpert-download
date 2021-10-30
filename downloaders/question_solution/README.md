@@ -1,8 +1,8 @@
 # Prerequisites
 1. `video_id` this is required to get the target video.
 2. Video url format `https://player.vimeo.com/video/{ VIMEO_VIDEO_ID }`
-3. `referer` header this is required by vimeo to allow access to private videos. I am using `https://www.algoexpert.io` cause all videos are allowed in `https://www.algoexpert.io` origin.
-4. Add below headers to change if need arises.
+3. `referer` header this is required by vimeo to allow access to private videos. Using `https://www.algoexpert.io` because all videos are allowed in `https://www.algoexpert.io` origin.
+4. Add below headers, change if need arises.
 
 Example of Headers for every requests sent to the Vimeo backend:
 ```json
