@@ -18,7 +18,7 @@ AUTH_KEY = "YOUR API KEY"
 
 # ================================================================
 # Configurations for question_data downloader
-RUN_question_data = False
+RUN_question_data = True
 
 # Headers to send with request to https://algoexpert.io
 REQUEST_HEADERS_FOR_ALGOEXPERT_SITE = {
@@ -40,16 +40,16 @@ REQUEST_HEADERS_FOR_ALGOEXPERT_SITE = {
     "sec-fetch-site": "same-site",
 }
 
-DOWNLOAD_QUESTION_LIST = False # If previously downloaded then set False
+DOWNLOAD_QUESTION_LIST = True # If previously downloaded then set False
 # Question list endpoint
 QUESTION_LIST_ENDPOINT = "https://prod.api.algoexpert.io/api/problems/v1/algoexpert/coding-questions/list"
 QUESTION_LIST_FILE_NAME = 'question_list.json'
 
-DOWNLOAD_QUESTION_DATA = False # If previously downloaded then set False
+DOWNLOAD_QUESTION_DATA = True # If previously downloaded then set False
 # Question metadata endpoint
 QUESTION_DATA_ENDPOINT = "https://prod.api.algoexpert.io/api/problems/v1/algoexpert/coding-questions/get"
 
-DOWNLOAD_QUESTION_TESTS = False # If previously downloaded then set False
+DOWNLOAD_QUESTION_TESTS = True # If previously downloaded then set False
 # Question tests endpoint
 QUESTION_TESTS_ENDPOINT = "https://prod.api.algoexpert.io/api/problems/v1/run_json_tests"
 
