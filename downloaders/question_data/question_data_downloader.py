@@ -13,21 +13,12 @@ sys.path.append(str(CURRENT_FILE_PATH.parent.parent.parent))
 # Importing from the directories added to path earlier
 from rename import make_file_name_valid
 from question_directory_getter import get_question_dir
+from file_helper import load_json_file_as_python_obj, write_python_object_to_file
 from config import PARENT_DIR, REQUEST_HEADERS_FOR_ALGOEXPERT_SITE,\
     DOWNLOAD_QUESTION_LIST, DOWNLOAD_QUESTION_DATA, DOWNLOAD_QUESTION_TESTS,\
     QUESTION_LIST_ENDPOINT, QUESTION_LIST_FILE_NAME, \
     QUESTION_DATA_ENDPOINT, QUESTION_TESTS_ENDPOINT, \
     COOLDOWN_TIME, INDENTATION_SPACES, LOG
-
-
-def write_python_object_to_file(obj:object, file_path:pathlib.Path, indent=INDENTATION_SPACES):
-    with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(json.dumps(obj, indent=indent))
-
-def load_json_file_as_python_obj(file_path:pathlib.Path):
-    with open(file_path, 'r', encoding="utf-8") as file:
-        python_obj = json.load(file)
-    return python_obj
 
 
 # Get list of all questions
