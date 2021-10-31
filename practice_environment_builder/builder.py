@@ -69,8 +69,7 @@ def main():
         # Writing tester code to starting_solve_file_path
         question_tests_data_object = load_json_file_as_python_obj(question_tests_path)
         write_test_file_for_question(question_data_object, question_tests_data_object, module_to_test=file_name, destination_file_path=tester_file_path)
-        if idx>=10:
-            break
+
 
 if __name__=="__main__":
     main()
