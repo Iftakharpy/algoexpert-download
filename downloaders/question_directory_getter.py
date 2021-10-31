@@ -9,11 +9,11 @@ from rename import make_file_name_valid
 from config import PARENT_DIR
 
 # This will be utilized to get the path to save and read question's data and solution
-def get_question_dir(question_name:str, serial_number:int = 0) -> pathlib.Path:
+def get_question_dir(question_name:str, serial_number:int = 0, parent_dir:pathlib.Path=PARENT_DIR) -> pathlib.Path:
     serial_number = f"{serial_number}".rjust(3, '0')
     folder_name = make_file_name_valid(question_name)
 
-    question_dir = PARENT_DIR / f"{serial_number} {folder_name}"
+    question_dir = parent_dir / f"{serial_number} {folder_name}"
     if not question_dir.exists():
         question_dir.mkdir()
     return question_dir

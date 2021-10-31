@@ -90,7 +90,7 @@ QUESTION_STATEMENT_XPATH = '//*[@id="root"]/div/div[6]/div[6]/div/div/div/div/di
 HINT_EXPAND_WAIT_TIME = 3.5
 
 # ================================================================
-# Configurations for question_pdf downloader
+# Configurations for question_solution_videos downloader
 RUN_download_question_solution_videos = True # If previously downloaded then set False
 
 ALLOWED_ORIGIN_FOR_VIDEOS = "https://www.algoexpert.io/"
@@ -114,3 +114,18 @@ REQUEST_HEADERS_FOR_VIMEO_SITE = {
 }
 
 VIDEO_URLS_REGEX = re.compile(r"(?:\")(?P<url>https://vod-progressive.+?mp4)(?:\")(?:.+?)\"quality\":\"(?P<quality>.+?)\"", re.MULTILINE)
+
+
+# ================================================================
+# Configurations for practice_environment_builder
+# Not good enough to generate testing code for complex questions
+# only usable for questions that are functions
+RUN_build_practice_environment = True
+
+# Root directory path to build practice environment
+PRACTICE_ENVIRONMENT_ROOT_DIR = pathlib.Path('./Practice/')
+PRACTICE_ENVIRONMENT_ROOT_DIR.mkdir(parents=True, exist_ok=True)
+
+PREFERRED_LANGUAGE_RESOURCE_KEY = "python"
+PREFERRED_LANGUAGE_FILE_EXTENSION = "py"
+# Note: Currently only builds environment for "python" language
