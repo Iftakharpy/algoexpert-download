@@ -6,6 +6,7 @@ from .starter_test_file_writter import write_test_file_for_question
 
 import pathlib
 import sys
+import shutil
 
 # Adding parent directory to path to import from the added parent directory
 CURRENT_FILE_PATH = pathlib.Path(__file__).absolute()
@@ -44,6 +45,13 @@ def main():
         # Build path for tester file
         tester_file_name = f"{file_name}_test.{PREFERRED_LANGUAGE_FILE_EXTENSION}"
         tester_file_path = question_practice_dir / tester_file_name
+
+        if LOG:
+            print(f"Copying question pdf file")
+        # Copying pdf question file
+        src_pdf_question = next(question_dir.glob('*.pdf'))
+        dest_pdf_question = question_practice_dir / src_pdf_question.parts[-1]
+        shutil.copy(src_pdf_question, dest_pdf_question)
 
         if LOG:
             print(f"Writing starter file")
