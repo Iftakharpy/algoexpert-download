@@ -7,8 +7,19 @@ Downloads all questions and solutions using python from https://www.algoexpert.i
 3. Install requirements to download questions as pdf file and to download solution videos.
 4. More on [question pdf][question-pdf-readme]
 5. More on [question solution videos][question-solution-videos-readme]
+6. [submit.py][solution-submitter] is a simple script to submit solutions using firefox browser
+   Requirements:
+    - [firefox browser][firefox-browser]
+    - [geokodriver][firefox-geokodriver]
+    - Add the directory to `PATH` where [geokodriver][firefox-geokodriver] binary is located
+    - Install `xclip` using `sudo apt-get install xclip` command for linux users
+    - Login to your algoexpert account in firefox browser before running [submit.py][solution-submitter] script
+7. Install requirements using `pip install -r requirements.txt`
 
 
 [question-data-readme]: ./downloaders/question_data/README.md
 [question-pdf-readme]: ./downloaders/question_pdf/README.md
 [question-solution-videos-readme]: ./downloaders/question_solution/README.md
+[solution-submitter]: ./submit.py
+[firefox-browser]: https://www.mozilla.org/en-US/firefox/new/
+[firefox-geokodriver]: https://github.com/mozilla/geckodriver/releases
