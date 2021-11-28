@@ -10,7 +10,7 @@ Downloads all questions and solutions using python from https://www.algoexpert.i
 6. [submit.py][solution-submitter] is a simple script to submit solutions using firefox browser
    Requirements:
     1. [firefox browser][firefox-browser]
-    2. [geokodriver][firefox-geokodriver]
+    2. [geckodriver][firefox-geokodriver]
     3. Add the directory to `PATH` where [geokodriver][firefox-geokodriver] binary is located
     4. Install `xclip` using `sudo apt-get install xclip` command for linux users
     5. Login to your algoexpert account in firefox browser before running [submit.py][solution-submitter] script
