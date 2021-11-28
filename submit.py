@@ -9,7 +9,9 @@ from selenium.webdriver.support import expected_conditions as EC
 import pyperclip as clip
 
 # Configs
+# Note: 'c8w8ks2g.default-release' should be replaced by user's own profile filename
 FIREFOX_PROFILE_PATH = "/home/iftakhar/.mozilla/firefox/c8w8ks2g.default-release"
+# Note: directory path should be changed to where questions are stored
 QUESTIONS_DIR = Path(r"/home/iftakhar/Desktop/AlgoExpert/Coding Interview Questions")
 
 # Set profile
@@ -19,6 +21,7 @@ firefox_options.profile = FIREFOX_PROFILE_PATH
 def submit_question(driver:Firefox, url:str, solution:str, LOAD_QUESTION_MAX_WAIT_TIME=10):
     driver.get(url)
 
+    # Warning: This xpath selector is not reliable might not work in future
     input_area_xpath = "/html/body/div[2]/div/div[4]/div[6]/div/div[3]/div/div[1]/div/div[4]/div[1]/div"
     
     WebDriverWait(driver, LOAD_QUESTION_MAX_WAIT_TIME).until(EC.visibility_of_element_located((By.XPATH, input_area_xpath)))
