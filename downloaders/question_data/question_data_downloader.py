@@ -52,7 +52,7 @@ def main():
             print(f"Loading question list from {str(question_list_file_path)}")
         questions = load_json_file_as_python_obj(question_list_file_path)
 
-    questions:list = questions['Problems']
+    questions:list = questions['questions']
     questions.sort(key=lambda obj: obj.get('difficulty'))
     
     for idx, question in enumerate(questions, 1):
