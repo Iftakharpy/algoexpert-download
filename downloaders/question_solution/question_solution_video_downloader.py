@@ -50,7 +50,7 @@ def download_video(url:str, destination:pathlib.Path, chunk_size=1024*1024*2):
         progress_bar.close()
 
 def main():
-    questions:list = load_json_file_as_python_obj(PARENT_DIR / QUESTION_LIST_FILE_NAME)['Problems']
+    questions:list = load_json_file_as_python_obj(PARENT_DIR / QUESTION_LIST_FILE_NAME)['questions']
     questions.sort(key=lambda obj: obj.get('difficulty'))
     
     for idx, question in enumerate(questions, 1):
