@@ -43,13 +43,14 @@ def main():
 
     for idx, question in enumerate(questions, 1):
         question_name = question['name']
+        question_uid = question['uid']
         if LOG:
             print(f"Downloading pdf: {idx} {question_name}")
 
         question_dir = get_question_dir(question_name, idx)
         
         # Navigate to target question
-        DRIVER.get(f'{QUESTION_URL_PREFIX}{question_name}')
+        DRIVER.get(f'{QUESTION_URL_PREFIX}{question_uid}')
         WebDriverWait(DRIVER, LOAD_QUESTION_MAX_WAIT_TIME).until(EC.visibility_of_element_located((By.XPATH, QUESTION_STATEMENT_XPATH)))
 
         DRIVER.execute_script(SCRIPT)
